@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const https = require('https');
-const login = require('./src/login')
+const login = require('./src/login');
+const arg = require('arg');
 
 require = require('esm')(module /*, options */);
 //require('./src/cli').cli(process.argv);
