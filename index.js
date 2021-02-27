@@ -2,6 +2,7 @@
 
 const https = require('https');
 const login = require('./src/login');
+const logout = require('./src/logout');
 const arg = require('arg');
 
 require = require('esm')(module /*, options */);
@@ -16,4 +17,5 @@ const options = {
 
 //process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-login.login(process.argv[2], process.argv[3]);
+logout.logout();
+//login.login(process.argv[2],process.argv[3]);
