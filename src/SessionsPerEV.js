@@ -1,8 +1,8 @@
 const https = require('https');
 const fs = require('fs');
 
-function sessionsPerPoint (pointid, from, to, format) {
-    const url = '/evcharge/api/SessionsPerPoint/' + pointid + '/' + from + '/' + to + '?format=' + format;
+function sessionsPerEV (evid, from, to, format) {
+    const url = '/evcharge/api/SessionsPerEV/' + evid + '/' + from + '/' + to + '?format=' + format;
     const path = "./softeng20bAPI.token";
     
     if(!fs.existsSync(path)) {
@@ -43,4 +43,4 @@ function sessionsPerPoint (pointid, from, to, format) {
     req.end();
 }
 
-exports.sessionsPerPoint = sessionsPerPoint;
+exports.sessionsPerEV = sessionsPerEV;

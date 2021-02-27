@@ -1,7 +1,7 @@
 const https = require('https');
 
-function sessionsPerStation (pointid, from, to, format) {
-    const url = '/evcharge/api/SessionsPerPoint/' + pointid + '/' + from + '/' + to + '?format=' + format;
+function sessionsPerStation (stationid, from, to, format) {
+    const url = '/evcharge/api/SessionsPerPoint/' + stationid + '/' + from + '/' + to + '?format=' + format;
     const path = './softeng20bAPI.token';
 
     if(!fs.existsSync(path)) {
@@ -13,7 +13,7 @@ function sessionsPerStation (pointid, from, to, format) {
         hostname: 'localhost',
         port: 8765,
         path: url,
-        method: 'POST',
+        method: 'GET',
         rejectUnauthorized: false,
 
         headers: {
@@ -42,4 +42,4 @@ function sessionsPerStation (pointid, from, to, format) {
     req.end();
 }
 
-exports.sessionsPerPoint = sessionsPerPoint;
+exports.sessionsPerStation = sessionsPerStation;
