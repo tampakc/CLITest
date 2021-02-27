@@ -1,10 +1,9 @@
 const https = require('https');
-const fs = require('fs');
 
-function sessionsPerPoint (pointid, from, to, format) {
+function sessionsPerStation (pointid, from, to, format) {
     const url = '/evcharge/api/SessionsPerPoint/' + pointid + '/' + from + '/' + to + '?format=' + format;
-    const path = "./softeng20bAPI.token";
-    
+    const path = './softeng20bAPI.token';
+
     if(!fs.existsSync(path)) {
         console.log('User authentication required. Please sign in');
         process.exit();
