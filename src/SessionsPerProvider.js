@@ -29,6 +29,16 @@ function sessionsPerProvider (providerid, from, to, format) {
             if(res.statusCode == 200) {
                 console.log(d);
             }
+            else if(res.statusCode == 401) {
+                console.log('User authentication failed.');
+                if(fs.existsSync(path)) {
+                    fs.unlink(path);
+                    console.log('You have been logged out. Please log in again');
+                }
+            }
+            else if(res.statusCode == 402) {
+                console.log('The results came up empty. Please try another request');
+            }
             else {
                 console.log('Status code: ' + res.statusCode);
                 console.log('Details: ' + d);
