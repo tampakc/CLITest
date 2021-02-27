@@ -7,6 +7,7 @@ const options = {
     port: 8765,
     path: '/evcharge/api/login',
     method: 'POST',
+    rejectUnauthorized: false,
 
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -44,6 +45,7 @@ function login (username, password) {
         })
     
         req.on('error', error => {
+            console.log(error);
             console.log("Something went wrong!");
         })
         

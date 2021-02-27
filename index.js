@@ -14,6 +14,6 @@ const options = {
     method: 'GET'
 }
 
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+//process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
 login.login(process.argv[2], process.argv[3]);
